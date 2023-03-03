@@ -2,6 +2,8 @@
 const button = document.getElementById("btn");
 const jokeElement = document.getElementById("joke");
 
+// Define API endpoint and key
+const apiUrl = "https://api.api-ninjas.com/v1/dadjokes?limit=1";
 const apiKey = "4kqGcJx8uDXo3XIskcbzokAz7rN8nWJs3PL9Mcll";
 
 const options = {
@@ -10,8 +12,6 @@ const options = {
     "X-Api-Key": apiKey,
   },
 };
-
-const apiURL = "https://api.api-ninjas.com/v1/dadjokes?limit=1";
 
 async function getJoke() {
   try {
