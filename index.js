@@ -14,25 +14,30 @@ const options = {
   },
 };
 
-
+// Function to fetch and display joke
 async function getJoke() {
   try {
-    jokeEl.innerText = "Updating...";
-    btnEl.disabled = true;
-    btnEl.innerText = "Loading...";
-    const response = await fetch(apiURL, options);
+    // Show loading message and disable button
+    jokeElement.innerText = "Updating...";
+    button.disabled = true;
+    button.innerText = "Loading...";
+
+    // Fetch joke from API
+    const response = await fetch(apiUrl, options);
     const data = await response.json();
 
-    btnEl.disabled = false;
-    btnEl.innerText = "Tell me a joke";
-
-    jokeEl.innerText = data[0].joke;
+    // Update button and display joke
+    button.disabled = false;
+    button.innerText = "Tell me a joke";
+    jokeElement.innerText = data[0].joke;
   } catch (error) {
-    jokeEl.innerText = "An error happened, try again later";
-    btnEl.disabled = false;
-    btnEl.innerText = "Tell me a joke";
+    // Handle errors
+    jokeElement.innerText = "An error happened, try again later";
+    button.disabled = false;
+    button.innerText = "Tell me a joke";
     console.log(error);
   }
 }
 
-btnEl.addEventListener("click", getJoke);
+// Attach click event listener to button
+button.addEventListener("click", getJoke);
