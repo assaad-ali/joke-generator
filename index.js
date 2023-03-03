@@ -6,12 +6,14 @@ const jokeElement = document.getElementById("joke");
 const apiUrl = "https://api.api-ninjas.com/v1/dadjokes?limit=1";
 const apiKey = "4kqGcJx8uDXo3XIskcbzokAz7rN8nWJs3PL9Mcll";
 
+// Define options for API request
 const options = {
   method: "GET",
   headers: {
     "X-Api-Key": apiKey,
   },
 };
+
 
 async function getJoke() {
   try {
