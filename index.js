@@ -55,3 +55,11 @@ class JokeGenerator {
     this.button.addEventListener("click", this.getJoke.bind(this));
   }
 }
+
+
+const apiKey = "4kqGcJx8uDXo3XIskcbzokAz7rN8nWJs3PL9Mcll";
+const apiURL = "https://api.api-ninjas.com/v1/dadjokes?limit=1";
+const jokeGenerator = new JokeGenerator(apiKey, apiURL);
+
+
+jokeGenerator.init();
