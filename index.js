@@ -49,4 +49,9 @@ class JokeGenerator {
       console.log(error);
     }
   }
+
+
+  init() {
+    this.button.addEventListener("click", this.getJoke.bind(this));
+  }
 }
